@@ -15,13 +15,19 @@
 */
 
 var CliGui = require("cligui2")
-
+var List = require("../commands")
 module.exports = class ConsoleManager {
   
   constructor() {
-    this.console = new CliGui()
+      this.console = new CliGui()
+      this.console.addListener("key",this.onKey)
   }
-  
+  onKey(key) {
+        
+  }
+  start() {
+      
+  }
   
   
   
