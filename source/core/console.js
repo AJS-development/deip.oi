@@ -18,16 +18,51 @@ var CliGui = require("cligui2")
 var List = require("../commands")
 module.exports = class ConsoleManager {
   
-  constructor() {
+  constructor(main) {
       this.console = new CliGui()
-      this.console.addListener("key",this.onKey)
+      this.main = main;
+      this.console.addListener("key",function() {
+          this.onKey
+      }.bind(this))
+      this.logger = false;
+      this.prop = false;
   }
+    init() { // logo, etc
+      this.logger = this.console.log("Welcome to Deip.oi!");
+        logger.log("Starting Deip.oi");
+        
+        
+    }
+    log(a) {
+    this.logger.log(a)
+    }
   onKey(key) {
         
+         this.promptStart();   
+        
   }
-  start() {
-      
+  promptStart() {
+         if (!this.prop) {
+             
+      this.prop = true
+      this.console.gprompt("Enter a command","Type help for a list of commands",List.details,function(a,str) {
+      this.input(str)
+      }.bind(this))
+         }
   }
+    promptEnd() {
+        if (this.prop) {
+         this.prop = false;
+            this.console.done();
+        }
+    }
+    input(str) {
+        str = str.split(" ")
+        if (List.commands[str[0]]) {
+            
+            List.commands[str[0]](this.main,str,this.console);
+        }
+    }
   
   
   
