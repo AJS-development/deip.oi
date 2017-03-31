@@ -20,12 +20,12 @@
     },
     "repository": {
         "type": "git",
-        "url": "https://github.com/AJS-development/OpenAgar"
+        "url": "https://github.com/AJS-development/deip.oi"
     },
     "author": "AJS-development",
     "license": "AGPL-3.0",
     "bugs": {
-        "url": "https://github.com/AJS-development/OpenAgar/issues"
+        "url": "https://github.com/AJS-development/deip.oi/issues"
     },
-    "homepage": "https://github.com/AJS-development/OpenAgar"
+    "homepage": "https://github.com/AJS-development/deip.oi"
 }
